@@ -8,9 +8,26 @@
 
 html {
     // This defines what 1rem is
-    font-size: 62.5%;
+    font-size: 62.5%; // 10px de 16px que son por default para la mayoria de los browsers
+
+    //con lo siguiente no solo estamos reduciento el tamaño de letra sino tambien el valor de un rem
+    // @include respond(phone){
+    //     font-size: 50%;
+    // }
+    // no incluimos el response phone por que se reemplaza por el tab-port ya que alcanza al 50% para ambos
+    @include respond(tab-port){
+        font-size: 50%; //1rem = 8px
+    }
+    @include respond(tab-land){
+        font-size: 56.2%; // 1rem = 9px
+    }
+    @include respond(big-desktop){
+        font-size: 75%; // 1rem = 12px, 12/16
+    }    
 }
 
 body {
     box-sizing: border-box;
 }
+
+
